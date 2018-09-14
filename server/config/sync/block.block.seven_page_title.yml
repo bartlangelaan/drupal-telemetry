@@ -1,13 +1,13 @@
-uuid: 9e1005ca-972c-44b8-a45c-7bcda9275d6b
+uuid: bf29b00f-6897-49eb-89d7-088e510634fd
 langcode: en
 status: true
 dependencies:
   theme:
-    - stark
+    - seven
 _core:
   default_config_hash: 8yptDf6WrXxeyevUz4nP5vfr7BtxQqCBMninhV2IJ1g
-id: stark_page_title
-theme: stark
+id: seven_page_title
+theme: seven
 region: content
 weight: -30
 provider: null
