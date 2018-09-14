@@ -1,0 +1,4 @@
+name: drupal-telemetry
+recipe: drupal8
+config:
+  webroot: server/web

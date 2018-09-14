@@ -1,0 +1,14 @@
+uuid: 3e3fd4d6-8999-46aa-aed6-01135ac72191
+name: 'Drupal Telemetry Server'
+mail: langelaanbart@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /user/login
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

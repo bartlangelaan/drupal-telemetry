@@ -1,5 +1,8 @@
 .vscode
 
+/server/web/*
+!/server/web/modules
+!/server/web/sites
 
 # Created by https://www.gitignore.io/api/node,composer,phpstorm+all
 
