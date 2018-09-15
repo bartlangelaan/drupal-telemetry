@@ -1,8 +1,14 @@
 .vscode
 
+# Ignore all automatically scaffolded files
 /server/web/*
 !/server/web/modules
 !/server/web/sites
+/server/web/sites/default/default.services.yml
+/server/web/sites/default/default.settings.php
+/server/web/sites/development.services.yml
+/server/web/sites/example.settings.local.php
+/server/web/sites/example.sites.php
 
 # Created by https://www.gitignore.io/api/node,composer,phpstorm+all
 

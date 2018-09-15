@@ -38,6 +38,15 @@
     "config": {
         "sort-packages": true
     },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "post-install-cmd": [
+            "@drupal-scaffold"
+        ],
+        "post-update-cmd": [
+            "@drupal-scaffold"
+        ]
+    },
     "extra": {
         "patchLevel": {
             "drupal/core": "-p2"
@@ -54,6 +63,9 @@
             "initial": {
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
+            },
+            "includes": {
+
             }
         }
     }
