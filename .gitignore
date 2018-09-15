@@ -9,6 +9,7 @@
 /server/web/sites/development.services.yml
 /server/web/sites/example.settings.local.php
 /server/web/sites/example.sites.php
+/server/web/sites/test
 
 # Created by https://www.gitignore.io/api/node,composer,phpstorm+all
 
