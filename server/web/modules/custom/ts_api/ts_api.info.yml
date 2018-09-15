@@ -1,0 +1,7 @@
+name: Telemetry Server - API
+type: module
+description: The REST endpoints of the Drupal Telemetry server.
+core: 8.x
+package: Telemetry Server
+dependencies:
+  - rest

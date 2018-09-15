@@ -6,9 +6,13 @@ module:
   field: 0
   filter: 0
   page_cache: 0
+  rest: 0
+  restui: 0
+  serialization: 0
   system: 0
   text: 0
   toolbar: 0
+  ts_api: 0
   user: 0
   minimal: 1000
 theme:

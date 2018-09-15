@@ -1,0 +1,19 @@
+uuid: 0ff0f793-d372-41f2-aad5-d372f04941c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - serialization
+    - ts_api
+    - user
+id: ts_api_ping
+plugin_id: ts_api_ping
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - POST
+  formats:
+    - json
+  authentication:
+    - cookie
