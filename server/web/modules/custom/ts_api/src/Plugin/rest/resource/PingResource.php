@@ -4,6 +4,8 @@ namespace Drupal\ts_api\Plugin\rest\resource;
 
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
+use Drupal\webform\Entity\WebformSubmission;
+use Drupal\webform\WebformSubmissionForm;
 
 /**
  * Provides a NM Activities API / RSS Feed
@@ -38,6 +40,13 @@ class PingResource extends ResourceBase {
         'message' => "The property 'data' wasn't found in the request."
       ], 400);
     }
+    foreach ($body['data'] as $project_id => $project_data) {
+      if (!is_array($project_data)) {
+        return new ResourceResponse([
+          'message' => "The property '$project_id' in 'data' should be an array."
+        ], 400);
+      }
+    }
 
     // Some properties are being hashed, so these properties aren't exposed
     // anywhere.
@@ -51,20 +60,51 @@ class PingResource extends ResourceBase {
     // the response.
     $errors = [];
 
+    // All the IDs of data that was saved is added to this array.
+    $saved_submissions = [];
+
     // This is the part where data is actually saved. The data for all projects
     // are stored as separate webform entries.
     foreach ($body['data'] as $project_id => $project_data) {
-      // Todo: Create a webform entry with the project data.
-      $errors[] = [
-        'project' => $project_id,
-        'message' => "No webform found for project $project_id"
-      ];
+
+      /** @var \Drupal\webform\WebformSubmissionInterface $webform_submission */
+      $webform_submission = \Drupal::entityTypeManager()
+        ->getStorage('webform_submission')
+        ->create([
+          'webform_id' => $project_id,
+          'data' => $project_data
+        ]);
+
+      // Try to submit the webform.
+      $errors_or_submission = WebformSubmissionForm::submitWebformSubmission($webform_submission);
+
+      // If the submission failed, an array of errors is returned. We add all
+      // errors to the $errors array.
+      if (is_array($errors_or_submission)) {
+        foreach($errors_or_submission as $project_error) {
+          $errors[] = [
+            'project' => $project_id,
+            'message' => $project_error,
+          ];
+        }
+      }
+      // If the submission was saved successfully, we add the uuid of the
+      // created submission to the $saved_submissions array.
+      elseif ($errors_or_submission instanceof WebformSubmission) {
+        $saved_submissions[] = $errors_or_submission->uuid();
+      }
+      else {
+        throw new \Exception('Unexpected response from the webform module.');
+      }
     }
 
+    // We return this data to the client, to let them know the data was saved
+    // successfully.
     return new ResourceResponse([
       'site' => $body['site'],
       'ping' => $body['ping'],
       'errors' => $errors,
+      'saved' => $saved_submissions,
     ], 201);
   }
 }
