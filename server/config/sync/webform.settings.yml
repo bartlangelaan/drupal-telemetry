@@ -243,9 +243,9 @@ libraries:
     - jquery.icheck
     - jquery.toggles
 requirements:
-  cdn: true
+  cdn: false
   bootstrap: true
-  spam: true
+  spam: false
 contribute:
   account_type: user
   account_id: null
