@@ -10,6 +10,7 @@ module:
   restui: 0
   serialization: 0
   system: 0
+  telemetry: 0
   text: 0
   toolbar: 0
   ts_api: 0

@@ -13,6 +13,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "path",
+            "url": "../client"
         }
     ],
     "require": {
@@ -22,6 +26,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.6.0",
         "drupal/restui": "^1.15",
+        "drupal/telemetry": "dev-master",
         "drupal/webform": "^5.0@RC",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",

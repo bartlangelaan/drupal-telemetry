@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f669109a684b3e062687cc57ed419ca",
+    "content-hash": "fc43911b585f26992960b199e866546f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2256,6 +2256,21 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/restui"
             }
+        },
+        {
+            "name": "drupal/telemetry",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../client",
+                "reference": "3b38804179af5189c970c6130e61439d3b7b8128",
+                "shasum": null
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Provides telemetry data to the central Drapal telemetry server for gathering statistics."
         },
         {
             "name": "drupal/webform",
@@ -7804,6 +7819,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/telemetry": 20,
         "drupal/webform": 5
     },
     "prefer-stable": true,
