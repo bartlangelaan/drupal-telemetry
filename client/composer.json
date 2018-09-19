@@ -1,0 +1,11 @@
+{
+    "name": "drupal/telemetry",
+    "description": "Provides telemetry data to the central Drapal telemetry server for gathering statistics.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+      "sort-packages": true
+    }
+}

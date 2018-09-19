@@ -1,0 +1,5 @@
+telemetry.config:
+  title: 'Telemetry'
+  description: 'View what data is sent to Drupal.'
+  parent: system.admin_reports
+  route_name: telemetry.config

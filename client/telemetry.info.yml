@@ -1,0 +1,7 @@
+name: Telemetry
+type: module
+description: 'Provides telemetry data to the central Drapal telemetry server for gathering statistics.'
+package: Core
+version: VERSION
+core: 8.x
+configure: telemetry.config

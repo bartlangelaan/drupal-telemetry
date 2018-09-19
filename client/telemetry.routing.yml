@@ -1,0 +1,7 @@
+telemetry.config:
+  path: '/admin/reports/telemetry'
+  defaults:
+    _form: '\Drupal\telemetry\Form\TelemetryConfigForm'
+    _title: 'Telemetry'
+  requirements:
+    _permission: 'access site reports'
